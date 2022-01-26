@@ -11,7 +11,7 @@ function Titulo(props) {
             <style jsx>{`
             ${Tag} {
                 color: ${appConfig.theme.colors.neutrals['000']};
-                font-size: 24px;
+                font-size: 30px;
                 font-weight: 600;
             }
             `}</style>
@@ -33,7 +33,7 @@ function Titulo(props) {
 // export default HomePage
 
 export default function PaginaInicial() {
-    // const username = 'epannunzio';
+//const username = 'epannunzio';
     const [username, setUsername] = React.useState('epannunzio');
     const roteamento = useRouter();
 
@@ -41,8 +41,8 @@ export default function PaginaInicial() {
         <>
             <Box
                 styleSheet={{
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    backgroundColor: appConfig.theme.colors.primary['000'],
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', 
+                    backgroundColor: appConfig.theme.colors.primary['000'], 
                     backgroundImage: 'url(https://www.roomforzoom.com/backgrounds/Beavis-and-Butthead-Beavis-and-368.jpg)',
                     backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
                 }}
@@ -51,12 +51,12 @@ export default function PaginaInicial() {
                     styleSheet={{
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'space-between',
+                        justifyContent: 'space-around',
                         flexDirection: {
                             xs: 'column',
                             sm: 'row',
                         },
-                        width: '25%', maxWidth: '700px',
+                        width: '100%', maxWidth: '700px',
                         borderRadius: '5px', padding: '32px', margin: '16px',
                         boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
                         backgroundColor: appConfig.theme.colors.neutrals[700],
@@ -73,15 +73,15 @@ export default function PaginaInicial() {
                         }}
                         styleSheet={{
                             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                            width: { xs: '50%', sm: '25%' }, textAlign: 'center', marginBottom: '32px',
+                            maxWidth: '100%', width: { xs: '50%', sm: '30%' }, textAlign: 'center', marginBottom: '32px',
                         }}
                     >
                         <Titulo tag="h2">Saudações!</Titulo>
                         <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
                             {appConfig.name}
-                        </Text>
+                        </Text>   
 
-                        {/* <input
+                        {<input
                             type="text"
                             value={username}
                             onChange={function (event) {
@@ -92,7 +92,8 @@ export default function PaginaInicial() {
                                 // através do React e avise quem precisa
                                 setUsername(valor);
                             }}
-                        /> */}
+                        />}
+
                         <TextField
                             value={username}
                             onChange={function (event) {
@@ -113,6 +114,7 @@ export default function PaginaInicial() {
                                 },
                             }}
                         />
+
                         <Button
                             type='submit'
                             label='Entrar'
@@ -120,10 +122,11 @@ export default function PaginaInicial() {
                             buttonColors={{
                                 contrastColor: appConfig.theme.colors.neutrals["000"],
                                 mainColor: appConfig.theme.colors.primary[500],
-                                mainColorLight: appConfig.theme.colors.primary[400],
-                                mainColorStrong: appConfig.theme.colors.primary[600],
+                                mainColorLight: appConfig.theme.colors.primary["050"],
+                                mainColorStrong: appConfig.theme.colors.primary["050"],
                             }}
                         />
+
                     </Box>
                     {/* Formulário */}
 
@@ -136,7 +139,7 @@ export default function PaginaInicial() {
                             alignItems: 'center',
                             maxWidth: '200px',
                             padding: '16px',
-                            backgroundColor: appConfig.theme.colors.neutrals[800],
+                            backgroundColor: appConfig.theme.colors.neutrals[500],
                             border: '1px solid',
                             borderColor: appConfig.theme.colors.neutrals[999],
                             borderRadius: '10px',
@@ -144,13 +147,16 @@ export default function PaginaInicial() {
                             minHeight: '240px',
                         }}
                     >
+
                         <Image
                             styleSheet={{
+                                border: '2px solid black',
                                 borderRadius: '50%',
                                 marginBottom: '16px',
                             }}
                             src={`https://github.com/${username}.png`}
                         />
+
                         <Text
                             variant="body4"
                             styleSheet={{
@@ -160,6 +166,7 @@ export default function PaginaInicial() {
                                 borderRadius: '1000px'
                             }}
                         >
+
                             {username}
                         </Text>
                     </Box>
